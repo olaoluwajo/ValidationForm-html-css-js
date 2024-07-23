@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login/Signup Form</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+
+<body>
+  <div class="full-container">
+    <img src="img/Group 13.png" alt="Side Image" />
+    <div class="wrapper">
+      <div class="title">
+        <img src="img/Frame 2.png" alt="Logo" />
+      </div>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked />
+            <input type="radio" name="slide" id="signup" />
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="#" class="login form-form" onsubmit="return validateForm(event)">
+              <div class="field">
+                <label for="login-email">Email <span class="asterisk">*</span></label>
+                <input type="text" id="login-email" placeholder="Email Address" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
+                <span class="error" id="login-email-error"> </span>
+              </div>
+              <div class="field">
+                <label for="login-password">Password <span class="asterisk">*</span></label>
+                <input type="password" id="login-password" placeholder="Password" />
+                <span class="toggle-password" onclick="togglePassword('login-password')">Show</span>
+                <span class="error" id="login-password-error"></span>
+              </div>
+              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login" />
+              </div>
+            </form>
+            <form action="#" class="signup" onsubmit="return validateForm(event)">
+              <div class="field">
+                <label for="signup-fullname">Fullname <span class="asterisk">*</span></label>
+                <input type="text" id="signup-fullname" placeholder="Fullname"  />
+                <span class="error" id="signup-fullname-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-phone">Phone Number <span class="asterisk">*</span></label>
+                <input type="text" id="signup-phone" placeholder="Phone Number"  />
+                <span class="error" id="signup-phone-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-email">Email <span class="asterisk">*</span></label>
+                <input type="text" id="signup-email" placeholder="Email Address" 
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
+                <span class="error" id="signup-email-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-password">Password <span class="asterisk">*</span></label>
+                <input type="password" id="signup-password" placeholder="Password"  />
+                <span class="toggle-password" onclick="togglePassword('signup-password')">Show</span>
+                <span class="error" id="signup-password-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-businessname">Business Name <span class="asterisk">*</span></label>
+                <input type="text" id="signup-businessname" placeholder="Business Name"  />
+                <span class="error" id="signup-businessname-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-businesslogo">Business Logo <span class="asterisk">*</span></label>
+                <input type="file" id="signup-businesslogo" accept="image/*"  />
+                <span class="error" id="signup-businesslogo-error"></span>
+              </div>
+              <div class="field">
+                <label for="signup-registration-type">Business Registration Type <span class="asterisk">*</span></label>
+                <select id="signup-registration-type" >
+                  <option value="">Select Registration Type</option>
+                  <option value="sole-proprietorship">Sole Proprietorship</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="corporation">Corporation</option>
+                  <option value="llc">LLC</option>
+                </select>
+                <span class="error" id="signup-registration-type-error"></span>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Signup" />
+              </div>
+              <div class="signup-link">
+                Already have an account? <a href="#" onclick="switchToLogin()">Login now</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="form.js"></script>
+</body>
+
+</html>
